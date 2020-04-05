@@ -239,7 +239,7 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['134.209.124.203']
 #DATABASES = {
  #   'default': {
   #      'CONN_MAX_AGE': 0,
