@@ -38,7 +38,6 @@ django-datetimepicker==3.14
 django-filer==1.4.1
 django-formtools==2.1
 django-friendship==1.8.0
-django-heroku==0.3.1
 django-imagekit==4.0.2
 django-jquery==3.1.0
 django-js-asset==1.1.0
@@ -149,6 +148,5 @@ vine==1.2.0
 virtualenv==20.0.15
 webencodings==0.5.1
 WebOb==1.8.5
-whitenoise==3.3.1
 wrapt==1.11.0
 zipp==3.1.0
