@@ -144,5 +144,5 @@ urllib3==1.24.1
 user-agents==1.1.0
 vine==1.2.0
 virtualenv==20.0.15
-webencodings==0.5.1
+webencodings==1.2.0
 zipp==3.1.0
