@@ -30,7 +30,7 @@ SECRET_KEY = 'n5ay9hm_v*(^uepo6fkj=m#q1pf1e2p0!*90qg=gtq1)@p*7j6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-#ALLOWED_HOSTS  = ['localhost','2ec1852e.ngrok.io','127.0.0.1','52.37.84.193','vlatest.otbafrica.com','ALLOWED_HOSTS', cast=Csv()]
+ALLOWED_HOSTS  = ['localhost','2ec1852e.ngrok.io','127.0.0.1','52.37.84.193','vlatest.otbafrica.com','ALLOWED_HOSTS','134.209.124.203']
 
 
 # Application definition
@@ -208,7 +208,6 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 
-ALLOWED_HOSTS = ['134.209.124.203']
 DATABASES = {
     'default': {
     'CONN_MAX_AGE': 0,
