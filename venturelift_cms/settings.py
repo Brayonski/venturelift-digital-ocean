@@ -211,13 +211,13 @@ CMS_PLACEHOLDER_CONF = {}
 ALLOWED_HOSTS = ['134.209.124.203']
 DATABASES = {
     'default': {
-       'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'localhost',
-       'NAME': 'venture',
-        'PASSWORD': 'mutai',
-        'PORT': '5432',
-        'USER': 'postgres'
+    'CONN_MAX_AGE': 0,
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'HOST': 'localhost',
+    'NAME': 'venture',
+    'PASSWORD': 'mutai',
+    'PORT': '5432',
+    'USER': 'postgres'
     }
 }
 
