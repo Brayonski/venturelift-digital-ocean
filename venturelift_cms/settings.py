@@ -1,5 +1,4 @@
 import os  # isort:skip
-from decouple import config,Csv
 from django.contrib.messages import constants as messages
 
 gettext = lambda s: s
