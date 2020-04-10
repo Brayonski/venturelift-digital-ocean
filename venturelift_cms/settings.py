@@ -207,38 +207,19 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
-
-
-DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('venture'),
-           'USER': config('postgres'),
-           'PASSWORD': config('mutai'),
-           'HOST': config('localhost'),
-           'PORT': '',
-       }
-       
-   }
-
-
-
 
 ALLOWED_HOSTS = ['134.209.124.203']
-#DATABASES = {
- #   'default': {
-  #      'CONN_MAX_AGE': 0,
-   #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #    'HOST': 'localhost',
-     #   'NAME': 'venture',
-    #    'PASSWORD': 'mutai',
-    #    'PORT': '5432',
-    #    'USER': 'postgres'
-    #}
-#}
+DATABASES = {
+    'default': {
+       'CONN_MAX_AGE': 0,
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'localhost',
+       'NAME': 'venture',
+        'PASSWORD': 'mutai',
+        'PORT': '5432',
+        'USER': 'postgres'
+    }
+}
 
 MIGRATION_MODULES = {
 
