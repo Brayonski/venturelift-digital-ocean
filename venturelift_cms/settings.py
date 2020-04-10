@@ -1,5 +1,4 @@
 import os  # isort:skip
-import dj_database_url
 from decouple import config,Csv
 from django.contrib.messages import constants as messages
 
@@ -213,9 +212,8 @@ MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-# development
-if config('MODE')=="dev":
-   DATABASES = {
+
+DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
            'NAME': config('venture'),
@@ -226,16 +224,9 @@ if config('MODE')=="dev":
        }
        
    }
-# production
-else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+
+
 
 ALLOWED_HOSTS = ['134.209.124.203']
 #DATABASES = {
