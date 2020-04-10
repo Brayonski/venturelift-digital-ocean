@@ -1,5 +1,4 @@
 import os  # isort:skip
-import django_heroku
 import dj_database_url
 from decouple import config,Csv
 from django.contrib.messages import constants as messages
@@ -317,4 +316,3 @@ CONSUMER_KEY = 'G4fR8iS27KSOwAJ5eOtRq0MFdwDVbwau'
 CONSUMER_SECRET = 'BrPh8l8ZbpCQAoUt'
 SHORTCODE = '174379'
 PASS_KEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
-django_heroku.settings(locals())
