@@ -2,25 +2,12 @@
 {% load cms_tags staticfiles %}
 {% load crispy_forms_tags %}
 {% block content_1 %}
-    <link rel="stylesheet" href="{% static 'css/cssCustom/jquery-ui.css' %}">
-    <!--chosen-->
-    <link rel="stylesheet" href="{% static 'css/cssCustom/chosen.css' %}">
-    <!--FontAwesome-->
-    <link rel="stylesheet" href="{% static 'fonts/fontAwesome/css/all.min.css' %}">
-    <!--slicknav stylesheet-->
-    <link rel="stylesheet" href="{% static 'css/cssCustom/slicknav.min.css' %}">
-    <!--bootstrap stylesheet-->
-    <link rel="stylesheet" href="{% static 'css/cssCustom/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/cssCustom/responsive.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	
-    <!--main stylesheet-->
 
-    <link rel="stylesheet" href="{% static 'custom/stylecrowdfunder.css' %}">
-	<link rel="stylesheet" href="{% static 'custom/styleFunder.css' %}">
-	<!--google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 <!--partners-box area start-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <div id="parterns-box-id" class="partners-box">
         <div class="container">
             <div class="row">
@@ -63,6 +50,25 @@
                        
                        <!--   Filter Dropdown End-->
                        <p>VLA provides capital providers (equity, debt and donation crowdfunding) with vetted investment opportunities and connections to qualified transaction advisors and consultants with local knowledge and track record in Africa.</p>
+                   </div>
+                   <div class="row">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+
+                      <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
                    </div>
                     <div class="row">
 					{% if campaign_list %}
@@ -153,23 +159,4 @@
 	 </div>
         </div>
     </div>
-    <script src="{% static 'js/jsCustom/jquery-3.4.1.min.js' %}"></script>
-      <script src="{% static 'js/jsCustom/popper.min.js' %}"></script>
-      <!--bootstrap js-->
-      <script src="{% static 'js/jsCustom/bootstrap.min.js' %}"></script>
-      <!--slicknav js-->
-      <script src="{% static 'js/jsCustom/jquery.slicknav.min.js' %}"></script>
-      <!--jQuery UI-->
-      <script src="{% static 'js/jsCustom/jquery-ui.js' %}"></script>
-      <!--  chosen js-->
-      <script src="{% static 'js/jsCustom/chosen.jquery.js' %}"></script>
-      <!--custom js-->
-      <script src="{% static 'js/jsCustom/activecrowdfunder.js' %}"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	  
-      
-	  
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 {% endblock %}
