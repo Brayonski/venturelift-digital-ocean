@@ -29,11 +29,12 @@
                                <div class="crowdfunder-select">
                                     <label for="">Select</label>
 
-                                    <select class="company-stage-select" name="files3" id="files3">                      
-                                        <option value="">Select a campaign</option>
+                                   <select class="company-stage-select" name="files3" id="files3">                      <option value="">Select a campaign</option>
                                           {% for campaign_sector in campaign_sectors %}
 											<option value="{{campaign_sector.id}}">{{campaign_sector.name}}</option>
 										  {% endfor %}
+                                          
+
                                     </select>
                                </div>
                                <div class="filter-submit">
@@ -44,55 +45,31 @@
                        </div>
                        
                        <!--   Filter Dropdown End-->
-                       <p> VLA provides capital providers (equity, debt and donation crowdfunding) with vetted investment opportunities and connections to qualified transaction advisors and consultants with local knowledge and track record in Africa.</p>
+                       <p>VLA provides capital providers (equity, debt and donation crowdfunding) with vetted investment opportunities and connections to qualified transaction advisors and consultants with local knowledge and track record in Africa.</p>
                    </div>
-
-                   <div class="card-deck">
-                    {% if campaign_list %}
-                    {% for campaign in campaign_list %}
-                    <div class="card">
-                        {% if campaign.campaign_image %}
-                        <img class="card-img-top" src="{{ campaign.campaign_image.url }}" alt="">
-                        {% else %}
-                      <img class="card-img-top" src="{% static 'img/no-img.jpg' %}" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">{{campaign.campaign_name|title}}</h5>
-                        <p class="card-text">{{campaign.campaign_type}}</p>
-                        <p class="card-text"><small >{{campaign.short_description|truncatewords:5}}</small></p>
-                        <a href="{% url 'crowdfunding:create_donation' campaign.id %}" class="single-partner-btn">Fund</a>
-                    </div>
-                    </div>
-                    {% endfor %}
-                    {% else %}
-                        <div>
-                            <p><b>No Available Published Campaigns </b></p>
-                        </div>
-                    {% endif %}
-                  </div>
-
                     <div class="row">
-                        {% if campaign_list %}
-                        {% for campaign in campaign_list %}
-                            <div class="col-lg-4">
-                                <div class="single-partner-box">
-                                    {% if campaign.campaign_image %}
-                                    <img src="{{ campaign.campaign_image.url }}">
-                                    {% else %}
-                                    <img src="{% static 'img/no-img.jpg' %}">
-                                    {% endif %}
-                                    <h4>{{campaign.campaign_name|title}}</h4>
-                                    <p>{{campaign.campaign_type}}</p>
-                                    <p class="sundry">{{campaign.short_description|truncatewords:5}}</p>
-                                    
-                                    <a href="{% url 'crowdfunding:create_donation' campaign.id %}" class="single-partner-btn">Fund</a>
-                                </div>
+					{% if campaign_list %}
+					{% for campaign in campaign_list %}
+                        <div class="col-lg-4">
+                            <div class="single-partner-box">
+                                {% if campaign.campaign_image %}
+                                <img src="{{ campaign.campaign_image.url }}">
+                                {% else %}
+                                <img src="{% static 'img/no-img.jpg' %}">
+                                {% endif %}
+                                <h4>{{campaign.campaign_name}}</h4>
+                                <p>{{campaign.campaign_type}}</p>
+                                <p class="sundry">{{campaign.short_description|truncatewords:5}}</p>
+                                
+                                <a href="{% url 'crowdfunding:create_donation' campaign.id %}" class="single-partner-btn">Fund</a>
                             </div>
-                        {% endfor %}
-                        {% else %}
-                        <div>
-                            <p><b>No Available Published Campaigns </b></p>
                         </div>
-                        {% endif %}
+                        {% endfor %}
+                {% else %}
+                     <div>
+                        <p><b>No Available Published Campaigns </b></p>
+                     </div>
+                {% endif %}
                     </div>
                  </div>
 			
@@ -104,7 +81,7 @@
                     <div class="profile-sidebar">
             <!--   single sidebar start-->
                         <div class="recommended-business custom-widgets">
-                            <h5 class="widget-title">Recommended Businesses</h5>
+                            <h5 class="widget-title">Recommended Business</h5>
 							{% for business in r_businesses %}
                             <div class="widget-elements">
 							{% if business.thumbnail_image %}
@@ -159,13 +136,4 @@
 	 </div>
         </div>
     </div>
-
-    <style>
-        .single-partner-box{
-            margin-bottom: 15px;
-        }
-        .partners-box-title p{
-        font-family: 'Source Sans Pro';
-        }
-    </style>
 {% endblock %}
