@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n5ay9hm_v*(^uepo6fkj=m#q1pf1e2p0!*90qg=gtq1)@p*7j6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS  = ['localhost','2ec1852e.ngrok.io','127.0.0.1','52.37.84.193','vlatest.otbafrica.com','ALLOWED_HOSTS','134.209.124.203']
 
@@ -68,14 +68,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = '/root/vla/vla_eminent/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'venturelift_cms', 'static'),
-)
+STATICFILES_DIRS = ['/root/vla/vla_eminent/venturelift_cms/static/']
 
 SITE_ID = 1
 
