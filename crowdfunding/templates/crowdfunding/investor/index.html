@@ -58,7 +58,7 @@
                     <div class="card" style="width: 15vw; margin-right: 2vw; border: solid #ffffff;">
                         <div class="single-partner-box">
                             {% if campaign.campaign_image %}
-                            <img src="{{ campaign.campaign_image.url }}">
+                            <img src="{{ campaign.campaign_image.url }}" style="width: 10vw;">
                             {% else %}
                             <img src="{% static 'img/no-img.jpg' %}">
                             {% endif %}
