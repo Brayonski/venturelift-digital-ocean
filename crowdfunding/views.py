@@ -27,6 +27,7 @@ from datetime import datetime
 import base64
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from .filters import CampaignFilter
 import decimal
 
 # Create your views here.
@@ -320,6 +321,10 @@ def verify_paypal_payment_funder(request):
     }
     return JsonResponse(responseData)
 
+def search(request):
+    campaing_list = Campaign.objects.all()
+    campaign_filter = CampaignFilter(request.GET, queryset=campaing_list)
+    return render(request, 'crowdfunding/investor/index.html', {'filter':campaign_filter})
 
 
 

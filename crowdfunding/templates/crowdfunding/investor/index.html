@@ -4,142 +4,213 @@
 {% block content_1 %}
 
 <!--partners-box area start-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <div id="parterns-box-id" class="partners-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                   <div class="partners-box-title">
-                       <h2>Current campaigns</h2>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<div id="parterns-box-id" class="partners-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="partners-box-title">
+                    <h2>Current campaigns</h2>
                     <!--  Filter Icon-->
-                       <div class="partners-filter">
-                           <p>
-                               <i class="fas fa-filter"></i> Filters
-                           </p>
-                       </div>
-                      <!--  Filter Icon End--> 
+                    <div class="partners-filter">
+                        <p>
+                            <i class="fas fa-filter"></i> Filters
+                        </p>
+                    </div>
+                    <!--  Filter Icon End-->
                     <!--   Filter Dropdown-->
-                       <div id="crowdfunder-filter-dropdown-item">
-                           <form method="post">
-						   {% csrf_token %}
-                               <div class="crowdfunder-name">
-                                   <label for="">Campaign Name:</label>
-                                   <input type="text" placeholder="Campaign Name" name="campaign_name">
-                               </div>
-                               
-                               <div class="crowdfunder-select">
-                                    <label for="">Select</label>
 
-                                   <select class="company-stage-select" name="files3" id="files3">                      <option value="">Select a campaign</option>
-                                          {% for campaign_sector in campaign_sectors %}
-											<option value="{{campaign_sector.id}}">{{campaign_sector.name}}</option>
-										  {% endfor %}
-                                          
+                    <div id="crowdfunder-filter-dropdown-item">
+                        <form method="get">
 
-                                    </select>
-                               </div>
-                               <div class="filter-submit">
-                                   <input type="submit" value="Filter">
-                               </div>
-                               
-                           </form>
-                       </div>
-                       
-                       <!--   Filter Dropdown End-->
-                       <p>VLA provides capital providers (equity, debt and donation crowdfunding) with vetted investment opportunities and connections to qualified transaction advisors and consultants with local knowledge and track record in Africa.</p>
-                   </div>
-                </div>
-                   <div class="row">
-                    {% if campaign_list %}
-                    {% for campaign in campaign_list %}
-                    <div class="card" style="width: 15vw; margin-right: 2vw; border: solid #ffffff;">
-                        <div class="single-partner-box">
-                            {% if campaign.campaign_image %}
-                            <img src="{{ campaign.campaign_image.url }}" style="width: 10vw;">
-                            {% else %}
-                            <img src="{% static 'img/no-img.jpg' %}">
-                            {% endif %}
-                            <h4>{{campaign.campaign_name}}</h4>
-                            <p>{{campaign.campaign_type}}</p>
-                            <p class="sundry">{{campaign.short_description|truncatewords:5}}</p>
-                            
-                            <a href="{% url 'crowdfunding:create_donation' campaign.id %}" class="btn btn-primary" style="padding-right: 3vw; padding-left: 3vw;">Fund</a>
-                        </div>
+                            <div class="crowdfunder-name" style="margin-right: 2vw;">
+                                <label for="">Campaign Name:</label>
+                                <input type="text" placeholder="Campaign Name" name="campaign_name">
+                            </div>
+
+                            <div class="crowdfunder-name">
+                                <label for="">Campaign Name:</label>
+                                <input type="text" placeholder="Campaign Type" name="campaign_type">
+                            </div>
+
+
+                            <div class="filter-submit">
+                                <input type="submit" value="Filter">
+                            </div>
+
+                        </form>
                     </div>
-                    {% endfor %}
-                    {% else %}
-                     <div>
-                        <p><b>No Available Published Campaigns </b></p>
-                     </div>
-                {% endif %}
-                   </div>
-                   
-                 
-			
-		
-	
 
-			<!--  Sidebar area start-->
-                <div class="col-lg-4">
-                    <div class="profile-sidebar">
-            <!--   single sidebar start-->
-                        <div class="recommended-business custom-widgets">
-                            <h5 class="widget-title">Recommended Business</h5>
-							{% for business in r_businesses %}
-                            <div class="widget-elements">
-							{% if business.thumbnail_image %}
-                                <img src="{{ business.thumbnail_image.url }}" alt="">
-                                <p><a href="{% url 'business_profile' business.pk %}">{{business.name}}</a></p>
-							{% else %}
-							<img src="{% static 'img/no-img.png' %}" alt="">
-                                <p><a href="{% url 'business_profile' business.pk %}">{{business.name}}</a></p>
-							{% endif %}
-                            </div>
-                            {% endfor %}
-                        </div>
-             <!--   single sidebar end-->
-             
-             <!--   single sidebar start-->  
-                        <div class="recommended-business custom-widgets">
-                            <h5 class="widget-title">Recommended Funders</h5>
-							{% for funder in r_investor %}
-                            <div class="widget-elements">
-							{% if funder.thumbnail_image %}
-                                <img src="{{ funder.thumbnail_image.url }}">
-                                <p>{{funder.investor_profile.user.username}}</p>
-								{% else %}
-								<img src="{% static 'img/funder.jpg' %}">
-                                <p>{{funder.investor_profile.user.username}}</p>
-								{% endif %}
-                            </div>
-                           {% endfor %}
-                        </div>
-             <!--   single sidebar end-->
+                    <!--   Filter Dropdown End-->
+                    <p>VLA provides capital providers (equity, debt and donation crowdfunding) with vetted investment
+                        opportunities and connections to qualified transaction advisors and consultants with local
+                        knowledge and track record in Africa.</p>
                         
-            <!--   single sidebar start-->         
-                        <div class="recommended-business custom-widgets">
-                            <h5 class="widget-title">Recommended Partners</h5>
-							{% for partner in r_supporter %}
-                            <div class="widget-elements">
-							{% if partner.thumbnail_image %}
-                                <img src="{{ partner.thumbnail_image.url }}">
-								<p><a href="{% url 'supporter_profile' partner.supporter_profile.pk %}">{{partner.supporter_profile.user.username}}</a></p>
-							{% else %}
-							<img src="{% static 'img/blue-user-icon.svg' %}">
-							<p><a href="{% url 'supporter_profile' partner.supporter_profile.pk %}">{{partner.supporter_profile.user.username}}</a></p>
-							{% endif %}
+                </div>
+            </div>
+            
+            <div class="row col-md-12">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="column" style="display: flex;flex-wrap: wrap;">
+                            {% for campaign in filter.qs %}
+                          <div class="card col-md-4" style="margin-bottom: 1vh;">
+                            <div class="single-partner-box">
+                                {% if campaign.campaign_image %}
+                                <img src="{{ campaign.campaign_image.url }}">
+                                {% else %}
+    
+                                {% endif %}
+                                <h4>{{campaign.campaign_name}}</h4>
+                                <p>{{campaign.campaign_type}}</p>
+                                <p class="sundry">{{campaign.short_description|truncatewords:5}}</p>
+    
+                                <a href="{% url 'crowdfunding:create_donation' campaign.id %}" class="btn btn-primary"
+                                    style="padding-right: 3vw; padding-left: 3vw;">Fund</a>
                             </div>
-                            {% endfor %}
+                          </div>
+                          {% endfor %}
                         </div>
-             <!--   single sidebar end-->
+                      </div>
+
+
+                   
+                </div>
+                <div class="col-md-4">
+                    <div class="">
+                        <div class="profile-sidebar">
+                            <!--   single sidebar start-->
+                            <div class="recommended-business custom-widgets">
+                                <h5 class="widget-title">Recommended Business</h5>
+                                {% for business in r_businesses %}
+                                <div class="widget-elements">
+                                    {% if business.thumbnail_image %}
+                                    <img src="{{ business.thumbnail_image.url }}" alt="">
+                                    <p><a href="{% url 'business_profile' business.pk %}">{{business.name}}</a></p>
+                                    {% else %}
+                                    <img src="{% static 'img/no-img.png' %}" alt="">
+                                    <p><a href="{% url 'business_profile' business.pk %}">{{business.name}}</a></p>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <!--   single sidebar end-->
+
+                            <!--   single sidebar start-->
+                            <div class="recommended-business custom-widgets">
+                                <h5 class="widget-title">Recommended Funders</h5>
+                                {% for funder in r_investor %}
+                                <div class="widget-elements">
+                                    {% if funder.thumbnail_image %}
+                                    <img src="{{ funder.thumbnail_image.url }}">
+                                    <p>{{funder.investor_profile.user.username}}</p>
+                                    {% else %}
+                                    <img src="{% static 'img/funder.jpg' %}">
+                                    <p>{{funder.investor_profile.user.username}}</p>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <!--   single sidebar end-->
+
+                            <!--   single sidebar start-->
+                            <div class="recommended-business custom-widgets">
+                                <h5 class="widget-title">Recommended Partners</h5>
+                                {% for partner in r_supporter %}
+                                <div class="widget-elements">
+                                    {% if partner.thumbnail_image %}
+                                    <img src="{{ partner.thumbnail_image.url }}">
+                                    <p><a
+                                            href="{% url 'supporter_profile' partner.supporter_profile.pk %}">{{partner.supporter_profile.user.username}}</a>
+                                    </p>
+                                    {% else %}
+                                    <img src="{% static 'img/blue-user-icon.svg' %}">
+                                    <p><a
+                                            href="{% url 'supporter_profile' partner.supporter_profile.pk %}">{{partner.supporter_profile.user.username}}</a>
+                                    </p>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <!--   single sidebar end-->
+                        </div>
                     </div>
-                </div>  
-                <!--  Sidebar area end-->                 
-           
-	 </div>
+                </div>
+            </div>
+
+
+            <!--  Sidebar area start
+            <div class="col-lg-4">
+                <div class="profile-sidebar">
+                    <!--   single sidebar start
+                    <div class="recommended-business custom-widgets">
+                        <h5 class="widget-title">Recommended Business</h5>
+                        {% for business in r_businesses %}
+                        <div class="widget-elements">
+                            {% if business.thumbnail_image %}
+                            <img src="{{ business.thumbnail_image.url }}" alt="">
+                            <p><a href="{% url 'business_profile' business.pk %}">{{business.name}}</a></p>
+                            {% else %}
+                            <img src="{% static 'img/no-img.png' %}" alt="">
+                            <p><a href="{% url 'business_profile' business.pk %}">{{business.name}}</a></p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!--   single sidebar end-->
+
+            <!--   single sidebar start
+                    <div class="recommended-business custom-widgets">
+                        <h5 class="widget-title">Recommended Funders</h5>
+                        {% for funder in r_investor %}
+                        <div class="widget-elements">
+                            {% if funder.thumbnail_image %}
+                            <img src="{{ funder.thumbnail_image.url }}">
+                            <p>{{funder.investor_profile.user.username}}</p>
+                            {% else %}
+                            <img src="{% static 'img/funder.jpg' %}">
+                            <p>{{funder.investor_profile.user.username}}</p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!--   single sidebar end-->
+
+            <!--   single sidebar start
+                    <div class="recommended-business custom-widgets">
+                        <h5 class="widget-title">Recommended Partners</h5>
+                        {% for partner in r_supporter %}
+                        <div class="widget-elements">
+                            {% if partner.thumbnail_image %}
+                            <img src="{{ partner.thumbnail_image.url }}">
+                            <p><a
+                                    href="{% url 'supporter_profile' partner.supporter_profile.pk %}">{{partner.supporter_profile.user.username}}</a>
+                            </p>
+                            {% else %}
+                            <img src="{% static 'img/blue-user-icon.svg' %}">
+                            <p><a
+                                    href="{% url 'supporter_profile' partner.supporter_profile.pk %}">{{partner.supporter_profile.user.username}}</a>
+                            </p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!--   single sidebar end
+                </div>
+            </div>
+            <!--  Sidebar area end-->
+
         </div>
     </div>
+</div>
 {% endblock %}

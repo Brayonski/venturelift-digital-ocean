@@ -23,6 +23,7 @@ urlpatterns = [
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^profile/', include('venturelift_profiles.urls')),
     url(r'^crowdfunding/', include('crowdfunding.urls')),
+    url(r'^crowdfunding/search', TemplateView.as_view(template_name="user_list.html"), name='crowdfunding_search'),
     url(r'^knowledge-center/', include('knowledge_center.urls')),
     url(r'^events', include('events.urls')),
     url(r'^registration/', RegistrationView.as_view(), name='registration_in'),
