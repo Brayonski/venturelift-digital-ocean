@@ -168,7 +168,8 @@ INSTALLED_APPS = (
     'events',
     'crowdfunding.apps.CrowdfundingConfig',
     'imagekit',
-    'paypalrestsdk'
+    'paypalrestsdk',
+    'django_filters'
 )
 
 LANGUAGES = (
