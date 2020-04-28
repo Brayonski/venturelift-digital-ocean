@@ -16,6 +16,7 @@ from django_registration.backends.activation.views import RegistrationView
 from django.views.generic import TemplateView
 from venturelift_cms import views
 
+
 admin.autodiscover()
 
 urlpatterns = [

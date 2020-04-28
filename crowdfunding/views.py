@@ -19,6 +19,7 @@ from django.utils import timezone
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.db.models import Q
 from crowdfunding.tasks import *
+from crowdfunding.models import *
 from django.conf import settings
 import requests
 from requests.auth import HTTPBasicAuth
@@ -29,6 +30,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from .filters import CampaignFilter
 import decimal
+from crowdfunding.models import Campaign
 
 # Create your views here.
 @login_required
@@ -322,9 +324,7 @@ def verify_paypal_payment_funder(request):
     return JsonResponse(responseData)
 
 def search(request):
-    campaing_list = Campaign.objects.all()
-    campaign_filter = CampaignFilter(request.GET, queryset=campaing_list)
+    campaign_list = Campaign.objects.all()
+    campaign_filter = CampaignFilter(request.GET, queryset=campaign_list)
     return render(request, 'crowdfunding/investor/index.html', {'filter':campaign_filter})
-
-
 

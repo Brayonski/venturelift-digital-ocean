@@ -1,63 +1,13 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% extends 'base.html' %}
 
 {% block content %}
-
-
-<div id="crowdfunder-filter-dropdown-item">
   <form method="get">
-
-    <div class="crowdfunder-name">
-      <label for="">Campaign Name:</label>
-      <input type="text" placeholder="Campaign Name" name="campaign_name">
-    </div>
-
-    <div class="crowdfunder-name">
-      <label for="">Campaign Name:</label>
-      <input type="text" placeholder="Campaign Type" name="campaign_type">
-    </div>
-
-
-    <div class="filter-submit">
-      <input type="submit" value="Filter">
-    </div>
-
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
   </form>
-</div>
-
-<div class="row">
+  <ul>
   {% for campaign in filter.qs %}
-  <div class="col-md-12">
-    <div class="col-md-4">
-      
-    </div>
-  </div>
-  <div class=" card" style="width: 15vw; margin-right: 2vw; border: solid #ffffff;">
-    <div class="single-partner-box">
-      {% if campaign.campaign_image %}
-      <img src="{{ campaign.campaign_image.url }}" style="width: 10vw;">
-      {% else %}
-
-      {% endif %}
-      <h4>{{campaign.campaign_name}}</h4>
-      <p>{{campaign.campaign_type}}</p>
-      <p class="sundry">{{campaign.short_description|truncatewords:5}}</p>
-
-      <a href="{% url 'crowdfunding:create_donation' campaign.id %}" class="btn btn-primary"
-        style="padding-right: 3vw; padding-left: 3vw;">Fund</a>
-    </div>
-  </div>
+    <li>{{ campaign.campaign_name }} - {{ campaign.campaign_type }}</li>
   {% endfor %}
-</div>
-
-
-
-
-
+  </ul>
 {% endblock %}
