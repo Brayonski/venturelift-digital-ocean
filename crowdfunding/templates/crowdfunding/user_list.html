@@ -35,12 +35,9 @@
   {% for campaign in filter.qs %}
   <div class="col-md-12">
     <div class="col-md-4">
-
+      
     </div>
   </div>
-  {% for campaign in filter.qs %}
-  <h4>{{campaign.campaign_name}}</h4>
-  {% endfor %}
   <div class=" card" style="width: 15vw; margin-right: 2vw; border: solid #ffffff;">
     <div class="single-partner-box">
       {% if campaign.campaign_image %}
