@@ -1011,6 +1011,28 @@ class BusinessProfileView(DetailView):
         context['following'] = following(self.request.user)
         return context
 
+class CampaignBusinessProfileView(DetailView):
+    model = Business
+    template_name = 'crowdfunding/investor/index.html'
+
+    def get_context_data(self, **kwargs):
+        """Returns the Business Profile instance that the view displays"""
+        context = super(BusinessProfileView, self).get_context_data(**kwargs)
+        business = Business.objects.get(
+            pk=self.kwargs.get("pk"))
+        r_supporter = SupporterProfile.objects.filter(interest_sectors=business.sector)[:3]
+        r_investor = InvestorProfile.objects.filter(target_sectors=business.sector)[:3]
+        r_businesses = Business.objects.filter(sector=business.sector,verified=True).exclude(creator=self.request.user).exclude(pk=self.kwargs.get("pk"))[:3]
+        context.update({'r_supporter': r_supporter,
+                        'r_investor':r_investor, 'r_businesses':r_businesses, 'business': business})
+        context['post'] = Post.objects.filter(
+            company=context['business'])[:5]
+        context['investor_following'] = following(self.request.user, Investor)[:3]
+        context['supporter_following'] = following(self.request.user, Supporter)[:3]
+        context['business_following'] = following(self.request.user, Business)[:3]
+        context['following'] = following(self.request.user)
+        return context
+
 
 class SupporterProfileView(DetailView):
     model = SupporterProfile
