@@ -204,13 +204,15 @@
                                 <div class="col-md-4">
                                     <div class="single-connection">
                                         {% if obj.thumbnail_image %}
-                                        <img src="{{ obj.thumbnail_image.url }}">
+                                        <img src="{{ obj.thumbnail_image.url }}" style="border-radius: 50%;
+                                        object-fit: cover;">
                                         <div class="connection-detsils">
                                             <a href="{% url 'supporter_profile' obj.pk %}" class="connection-name">{{obj.user.first_name}} {{obj.user.last_name|truncatechars:6}}</a>
                                             <p>{{obj.role|truncatechars:10}}</p>
                                         </div>
                                         {% else %}
-                                        <img src="{% static 'img/no-img.jpg' %}">
+                                        <img src="{% static 'img/no-img.jpg' %}" style="border-radius: 50%;
+                                        object-fit: cover;">
                                         <div class="connection-detsils">
                                             <a href="{% url 'supporter_profile' obj.pk %}" class="connection-name">{{obj.user.first_name}} {{obj.user.last_name|truncatechars:6}}</a>
                                             <p>{{obj.role|truncatechars:10}}</p>
@@ -577,13 +579,15 @@
                                         <div class="col-md-4">
                                             <div class="single-connection">
                                                 {% if obj.thumbnail_image %}
-                                                <img src="{{ obj.thumbnail_image.url }}">
+                                                <img src="{{ obj.thumbnail_image.url }}" style="border-radius: 50%;
+                                                object-fit: cover;">
                                                 <div class="connection-detsils">
                                                     <a href="{% url 'supporter_profile' obj.pk %}" class="connection-name">{{obj.user.first_name}} {{obj.user.last_name|truncatechars:6}}</a>
                                                     <p>{{obj.role|truncatechars:10}}</p>
                                                 </div>
                                                 {% else %}
-                                                <img src="{% static 'img/no-img.jpg' %}">
+                                                <img src="{% static 'img/no-img.jpg' %}" style="border-radius: 50%;
+                                                object-fit: cover;">
                                                 <div class="connection-detsils">
                                                     <a href="{% url 'supporter_profile' obj.pk %}" class="connection-name">{{obj.user.first_name}} {{obj.user.last_name|truncatechars:6}}</a>
                                                     <p>{{obj.role|truncatechars:10}}</p>
@@ -967,13 +971,15 @@
                                     <div class="col-md-4">
                                         <div class="single-connection">
                                             {% if obj.thumbnail_image %}
-                                            <img src="{{ obj.thumbnail_image.url }}">
+                                            <img src="{{ obj.thumbnail_image.url }}" style="border-radius: 50%;
+                                            object-fit: cover;">
                                             <div class="connection-detsils">
                                                 <a href="{% url 'supporter_profile' obj.pk %}" class="connection-name">{{obj.user.first_name}} {{obj.user.last_name|truncatechars:6}}</a>
                                                 <p>{{obj.role|truncatechars:10}}</p>
                                             </div>
                                             {% else %}
-                                            <img src="{% static 'img/no-img.jpg' %}">
+                                            <img src="{% static 'img/no-img.jpg' %}" style="border-radius: 50%;
+                                            object-fit: cover;">
                                             <div class="connection-detsils">
                                                 <a href="{% url 'supporter_profile' obj.pk %}" class="connection-name">{{obj.user.first_name}} {{obj.user.last_name|truncatechars:6}}</a>
                                                 <p>{{obj.role|truncatechars:10}}</p>
