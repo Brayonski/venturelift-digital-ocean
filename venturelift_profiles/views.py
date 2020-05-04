@@ -731,6 +731,8 @@ class InvestorUpdateProfileView(LoginRequiredMixin, UpdateView):
                                     kwargs={'pk': self.kwargs['pk']}))
         if current_url == 'update_investor_step2':
             self.object = form.save(commit=False)
+            self.object.target_sectors = form.cleaned_data['target_sectors']
+            self.object.target_countries = form.cleaned_data['target_countries']
             if form.cleaned_data['funder_type'] == "Investor":
                 self.object.funder_type = form.cleaned_data['funder_type']
                 self.object.investment_type = self.request.POST['funder_investor_type']

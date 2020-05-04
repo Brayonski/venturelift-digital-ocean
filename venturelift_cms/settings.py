@@ -212,10 +212,10 @@ DATABASES = {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'localhost',
-        'NAME': 'venture',
-        'PASSWORD': 'mutai',
+        'NAME': 'vlaeminent',
+        'PASSWORD': 'vlApp12345.',
         'PORT': '5432',
-        'USER': 'postgres'
+        'USER': 'venture'
     }
 }
 
@@ -238,9 +238,11 @@ THUMBNAIL_PROCESSORS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'kiprotichbrian8@gmail.com'
-EMAIL_HOST_PASSWORD = 'Boulevard4188.'
-ADMIN_EMAIL = 'kiprotichbrian8@gmail.com'
+EMAIL_HOST_USER = 'venturelifttest@gmail.com'
+EMAIL_HOST_PASSWORD = '4852ec16-cfa8'
+ADMIN_EMAIL = 'tryventuretestmail@gmail.com'
+
+
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert alert-info',

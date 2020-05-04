@@ -13,12 +13,12 @@
                     <h4 class="text-center">Step 1: Basic Information</h4>
                     <br>
                     <div class="form-row">
-                        <div class="form-group col-md-12 mb-0">
+                        <div class="form-group col-md-4 mb-0">
                             <div class="row col-md-12">
-                                <div class="col-md-3">
+                                <div class="col-md-12">
                                     <img class="image-update" src="{{ business.thumbnail_image.url }}" alt="">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-12">
                                     {{ form.thumbnail_image|as_crispy_field }}
                                 </div>
                             </div>
@@ -28,9 +28,6 @@
                         </div>
                         <div class="form-group col-md-4 mb-0">
                             {{ form.gender|as_crispy_field }}
-                        </div>
-                        <div class="form-group col-md-12 mb-0">
-                            {{ form.about|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-row">
@@ -217,7 +214,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <a href="{% url 'profile_summary' %}" class='btn btn-warning'>Done</a>
+                        <button class='btn btn-warning'>Done</button>
                     </div>
                     {% endif %}
                     
