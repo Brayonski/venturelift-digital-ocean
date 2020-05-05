@@ -12,7 +12,7 @@ class CreateBusinessForm(ModelForm):
         labels = {
             "thumbnail_image": "Company logo",
             "name": "Company name",
-            "about": "about",
+            "about": "About",
             "gender": "Gender",
             "sector": "Industry",
             "size": "Company size",
