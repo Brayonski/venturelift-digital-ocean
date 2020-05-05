@@ -212,10 +212,10 @@ DATABASES = {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'localhost',
-        'NAME': 'vlaeminent',
-        'PASSWORD': 'vlApp12345.',
+        'NAME': 'venture',
+        'PASSWORD': 'mutai',
         'PORT': '5432',
-        'USER': 'venture'
+        'USER': 'postgres'
     }
 }
 
