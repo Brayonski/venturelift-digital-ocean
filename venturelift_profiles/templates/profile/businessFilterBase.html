@@ -34,7 +34,7 @@
    <body>
   {% cms_toolbar %}
     <!--header area start-->
-    <header class="header-area">
+    <header class="header-area" style="position: relative;">
     <!--header top start-->
         <div class="header-top">
             <div class="container">
@@ -123,7 +123,7 @@
   
 	
 	<!--Footer area start-->
-    <footer class="profile-footer">
+    <footer class="profile-footer" style="position: relative;">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-3  col-md-6">
@@ -182,10 +182,18 @@
     <!--Footer bottom area end-->
 
     <style>
+        html {
+        position: relative;
+        min-height: 100%;
+        }
         .footer-bottom{
             padding-top: 6px;
             padding-bottom: 2px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
+        
         .footer-bottom{
             font-size: 15px;
         }
@@ -197,10 +205,7 @@
             padding-left: 2vw;
             font-family: 'Source Sans Pro';
         }
-        footer {
-        padding-top: 2vh;
-        padding-bottom: 2vh;
-        }
+        
         .contact-info{
             margin-bottom: 5px;
         }
