@@ -241,11 +241,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'venturelifttest@gmail.com'
 EMAIL_HOST_PASSWORD = '4852ec16-cfa8'
 ADMIN_EMAIL = 'tryventuretestmail@gmail.com'
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 8e26ee4db679f41b72ff5cac72b1fe33022f5d93
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert alert-info',
