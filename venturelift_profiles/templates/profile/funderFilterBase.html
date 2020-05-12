@@ -2,7 +2,8 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,25 +19,26 @@
     <link rel="stylesheet" href="{% static 'css/cssCustom/slicknav.min.css' %}">
     <!--bootstrap stylesheet-->
     <link rel="stylesheet" href="{% static 'css/cssCustom/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/cssCustom/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cssCustom/responsive.css' %}">
     <!--main stylesheet-->
     <link rel="stylesheet" href="{% static 'custom/stylefunderpages.css' %}">
-	<link rel="stylesheet" href="{% static 'custom/styleFunder.css' %}">
-	<!--google fonts-->
+    <link rel="stylesheet" href="{% static 'custom/styleFunder.css' %}">
+    <!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-	
-	
 
-	
 
-	{{ form.media.css }}
-  {% render_block "css" %}
-  </head>
-   <body>
-  {% cms_toolbar %}
+
+
+
+    {{ form.media.css }}
+    {% render_block "css" %}
+</head>
+
+<body>
+    {% cms_toolbar %}
     <!--header area start-->
     <header class="header-area">
-    <!--header top start-->
+        <!--header top start-->
         <div class="header-top">
             <div class="container">
                 <div class="row">
@@ -45,137 +47,143 @@
                     </div>
                     <div class="col-xl-7 offset-xl-3 col-md-9 offset-md-1 ">
                         <nav>
-                            <ul  id="menu">
+                            <ul id="menu">
                                 <li><a href="/">Home</a></li>
                                 <li><a href="#">Business</a>
-									<ul>
+                                    <ul>
                                         <li><a href="{% url 'business_startup' %}">Startup</a></li>
                                         <li><a href="{% url 'business_smes' %}">SMEs</a></li>
-                                        
+
                                     </ul>
-								</li>
+                                </li>
                                 <li><a href="#">Funder</a>
-									<ul>
+                                    <ul>
                                         <li><a href="{% url 'investor_filter' 'Investor' %}">Investor</a></li>
                                         <li><a href="{% url 'crowdfunding:index' %}">Crowdfunder</a></li>
                                         <li><a href="{% url 'investor_filter' 'Lender' %}">Lender</a></li>
                                         <li><a href="{% url 'investor_filter' 'Grantor' %}">Grantor</a></li>
-                                        
+
                                     </ul>
-								</li>
+                                </li>
                                 <li><a href="#">Partners</a>
                                     <ul>
                                         <li><a href="{% url 'supporter_filter' 'Trade' %}">Trade</a></li>
                                         <li><a href="{% url 'supporter_filter' 'Supply Chain' %}">Supply Chain</a></li>
                                         <li><a href="{% url 'supporter_filter' 'Technology' %}">Technology</a></li>
                                         <li><a href="{% url 'supporter_filter' 'Talent' %}">Talent</a></li>
-                                        <li><a href="{% url 'supporter_filter' 'Professional Services' %}">Professional Services</a></li>
-                                        
+                                        <li><a href="{% url 'supporter_filter' 'Professional Services' %}">Professional
+                                                Services</a></li>
+
                                     </ul>
                                 </li>
                                 <li><a href="{%url 'knowledge_center_home' %}">Knowledge Center</a></li>
                                 <li><a href="{%url 'events_home' %}">Events</a></li>
                                 <li id="profile-pic-sm"><a href="#">{% if context.supporter %}
-                    {% if context.supporter.thumbnail_image %}
-                      <img src="{{ context.supporter.thumbnail_image.url }}">
-                    {% else %}
-                      {% if context.supporter.gender == 'Male' or context.supporter.gender == 'Other' %}
-                      <img src="{% static 'img/blue-user-icon.svg' %}">
-                      {% else %}
-                      <img src="{% static 'img/no-img.jpg' %}">
-                      {% endif %}
-                    {% endif %}
-                  {% elif context.investor %}
-                    {% if context.investor.thumbnail_image %}
-                      <img src="{{ context.investor.thumbnail_image.url }}">
-                    {% else %}
-                      {% if context.investor.gender == 'Male' or context.investor.gender == 'Other' %}
-                        <img src="{% static 'img/blue-user-icon.svg' %}">
-                        {% else %}
-                        <img src="{% static 'img/no-img.jpg' %}">
-                      {% endif %}
-                    {% endif %}
-                  {% elif context.business %}
-                    {% if context.business.thumbnail_image %}
-                    <img src="{{ context.business.thumbnail_image.url }}">
-                    {% else %}
-                    <img src="{% static 'img/no-img.jpg' %}">
-                    {% endif %}
-                  {% endif %}</a>
-									<ul>
+                                        {% if context.supporter.thumbnail_image %}
+                                        <img src="{{ context.supporter.thumbnail_image.url }}">
+                                        {% else %}
+                                        {% if context.supporter.gender == 'Male' or context.supporter.gender == 'Other' %}
+                                        <img src="{% static 'img/blue-user-icon.svg' %}">
+                                        {% else %}
+                                        <img src="{% static 'img/no-img.jpg' %}">
+                                        {% endif %}
+                                        {% endif %}
+                                        {% elif context.investor %}
+                                        {% if context.investor.thumbnail_image %}
+                                        <img src="{{ context.investor.thumbnail_image.url }}">
+                                        {% else %}
+                                        {% if context.investor.gender == 'Male' or context.investor.gender == 'Other' %}
+                                        <img src="{% static 'img/blue-user-icon.svg' %}">
+                                        {% else %}
+                                        <img src="{% static 'img/no-img.jpg' %}">
+                                        {% endif %}
+                                        {% endif %}
+                                        {% elif context.business %}
+                                        {% if context.business.thumbnail_image %}
+                                        <img src="{{ context.business.thumbnail_image.url }}">
+                                        {% else %}
+                                        <img src="{% static 'img/no-img.jpg' %}">
+                                        {% endif %}
+                                        {% endif %}</a>
+                                    <ul>
                                         <li><a href="{% url 'profile_summary' %}">My Profile</a></li>
                                         <li><a href="{% url 'logout' %}">Logout</a></li>
-                                        
+
                                     </ul>
-								</li>
+                                </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
-		</header>
+    </header>
     <!--header top end-->
-	
-	
-	{% block content_1 %}{% endblock %}
-	
+
+
+    {% block content_1 %}{% endblock %}
+
     {% block content %}{% endblock %}
-  
-	
-	<!--Footer area start-->
-    <footer class="profile-footer">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-3  col-md-6">
-                    <div class="footer-widget-one widget">
-                        <img style="clear: left; float: left;" src="{% static 'img/logo2.png' %}" alt="">
-                        <p style="float: left;">The way to get started is to quit talking and begin doing.” – Walt Disney</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 ">
-                    <div class="footer-widget-two widget">
-                        <h5 style="clear: left; float: left;" class="footer-title">Company</h5>
-                        <div class="footer-nav">
-                            <ul>
-                                <li style="clear: left; float: left;"><a href="/about-us">About Us</a></li>
-                                <li style="clear: left; float: left;"><a href="/careers">Careers</a></li>
-                                <li style="clear: left; float: left;"><a href="/help">FAQ</a></li>
-                            </ul>
+
+
+    <!--Footer area start-->
+    <div style="margin-top: 40vh;">
+        <footer class="profile-footer">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-3  col-md-6">
+                        <div class="footer-widget-one widget">
+                            <img style="clear: left; float: left;" src="{% static 'img/logo2.png' %}" alt="">
+                            <p style="float: left;">The way to get started is to quit talking and begin doing.” – Walt
+                                Disney</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 ">
-                    <div class="footer-widget-three widget">
-                        <h5 style="clear: left; float: left;" class="footer-title">Quick Links</h5>
-                        <div class="footer-nav">
-                            <ul>
-                                <li style="clear: left; float: left;"><a href="#">Business</a></li>
-                                <li style="clear: left; float: left;"><a href="#">Funder</a></li>
-                                <li style="clear: left; float: left;"><a href="#">Partner</a></li>
-                            </ul>
+                    <div class="col-lg-3 col-md-6 ">
+                        <div class="footer-widget-two widget">
+                            <h5 style="clear: left; float: left;" class="footer-title">Company</h5>
+                            <div class="footer-nav">
+                                <ul>
+                                    <li style="clear: left; float: left;"><a href="/about-us">About Us</a></li>
+                                    <li style="clear: left; float: left;"><a href="/careers">Careers</a></li>
+                                    <li style="clear: left; float: left;"><a href="/help">FAQ</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget-four widget">
-                        <h5 style="clear: left; float: left;" class="footer-title">Contact</h5>
+                    <div class="col-lg-3 col-md-6 ">
+                        <div class="footer-widget-three widget">
+                            <h5 style="clear: left; float: left;" class="footer-title">Quick Links</h5>
+                            <div class="footer-nav">
+                                <ul>
+                                    <li style="clear: left; float: left;"><a href="#">Business</a></li>
+                                    <li style="clear: left; float: left;"><a href="#">Funder</a></li>
+                                    <li style="clear: left; float: left;"><a href="#">Partner</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget-four widget">
+                            <h5 style="clear: left; float: left;" class="footer-title">Contact</h5>
                             <h5 style="clear: left; float: left;"><i class="fas fa-envelope"></i> Email</h5>
                             <h5 style="clear: left; float: left;"><i class="fas fa-phone"></i> Telephone</h5>
-                        <div class="social-links">
-                            <ul>
-                                <li style="clear: left; float: left;"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li style="float: left;"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li style="float: left;"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
+                            <div class="social-links">
+                                <ul>
+                                    <li style="clear: left; float: left;"><a href="#"><i
+                                                class="fab fa-facebook-f"></i></a></li>
+                                    <li style="float: left;"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li style="float: left;"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+
     <!--Footer area end-->
-    
+
     <!--Footer bottom area start-->
     <section class="footer-bottom">
         <p><a href="{% url 'terms-of-use' %}">&copy; 2020. All Rights Reserved | Terms of Use</a></p>
@@ -184,113 +192,133 @@
 
     <style>
         html {
-        position: relative;
-        min-height: 100%;
+            position: relative;
+            min-height: 100%;
         }
-        .footer-bottom{
+
+        .footer-bottom {
             padding-top: 6px;
             padding-bottom: 2px;
             position: absolute;
             bottom: 0;
             width: 100%;
         }
-        .footer-bottom{
+        
+        .profile-footer{
+            
+            position:absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .footer-bottom {
             font-size: 15px;
         }
-        .footer-bottom .terms{
+
+        .footer-bottom .terms {
             margin-top: -20px;
         }
-        .footer-widget-one p{
+
+        .footer-widget-one p {
             border-left: 3px solid #1abedb;
             padding-left: 2vw;
             font-family: 'Source Sans Pro';
         }
+
         footer {
-        padding-top: 2vh;
-        padding-bottom: 2vh;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
         }
-        .contact-info{
+
+        .contact-info {
             margin-bottom: 5px;
         }
-        .footer-widget-one{
+
+        .footer-widget-one {
             right: 5vw;
         }
-        .footer-widget-two{
+
+        .footer-widget-two {
             padding-left: 8vw;
         }
-        .footer-widget-three{
+
+        .footer-widget-three {
             padding-left: 5vw;
         }
-        .footer-widget-four{
+
+        .footer-widget-four {
             padding-left: 3vw;
         }
-        .footer-bottom a{
+
+        .footer-bottom a {
             text-decoration: none;
             color: #ffffff;
         }
-        .profile-footer{
-            padding-bottom: 10vh;
+
+        .profile-footer {
+            padding-bottom: 70px;
         }
     </style>
-     
 
-      <!--js files-->
-      <!--jquery js-->
-      
-	  
-	  <script src="{% static 'js/jsCustom/jquery-3.4.1.min.js' %}"></script>
-      <script src="{% static 'js/jsCustom/popper.min.js' %}"></script>
-      <!--bootstrap js-->
-      <script src="{% static 'js/jsCustom/bootstrap.min.js' %}"></script>
-      <!--slicknav js-->
-      <script src="{% static 'js/jsCustom/jquery.slicknav.min.js' %}"></script>
-      <!--jQuery UI-->
-      <script src="{% static 'js/jsCustom/jquery-ui.js' %}"></script>
-      <!--  chosen js-->
-      <script src="{% static 'js/jsCustom/chosen.jquery.js' %}"></script>
-      <!--custom js-->
-      <script src="{% static 'js/jsCustom/activefunderpages.js' %}"></script>
-	  
-      
-	  
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script>
-    window.jQuery or document.write('<script src="js/vendor/jquery.min.js"><\/script>')
-  </script>
-  
-  <script>
-  $(document).ready(function(){    
-     $(function(){
-        $('#menu').slicknav({
-            'prependTo':'nav',
+
+    <!--js files-->
+    <!--jquery js-->
+
+
+    <script src="{% static 'js/jsCustom/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/jsCustom/popper.min.js' %}"></script>
+    <!--bootstrap js-->
+    <script src="{% static 'js/jsCustom/bootstrap.min.js' %}"></script>
+    <!--slicknav js-->
+    <script src="{% static 'js/jsCustom/jquery.slicknav.min.js' %}"></script>
+    <!--jQuery UI-->
+    <script src="{% static 'js/jsCustom/jquery-ui.js' %}"></script>
+    <!--  chosen js-->
+    <script src="{% static 'js/jsCustom/chosen.jquery.js' %}"></script>
+    <!--custom js-->
+    <script src="{% static 'js/jsCustom/activefunderpages.js' %}"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        window.jQuery or document.write('<script src="js/vendor/jquery.min.js"><\/script>')
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('#menu').slicknav({
+                    'prependTo': 'nav',
+                });
+            });
+
+
+            $("#companyinterestcountry").click(function () {
+                $("#companyinterestdropdown").slideToggle();
+            });
+
+            $(".partners-filter").click(function () {
+                $("#funder-filter-dropdown-item").slideToggle();
+            });
+
+            $("#files2").selectmenu();
+            $('#choosenactive').chosen();
+            $('#sectorsactive').chosen();
+            $('#funderactive').chosen();
+
         });
-    });
-             
-        
-    $("#companyinterestcountry").click(function(){
-        $("#companyinterestdropdown").slideToggle();
-    });
-    
-    $(".partners-filter").click(function(){
-        $("#funder-filter-dropdown-item").slideToggle();
-    });
+    </script>
 
-    $( "#files2" ).selectmenu();
-    $('#choosenactive').chosen();
-    $('#sectorsactive').chosen();
-    $('#funderactive').chosen();
-    
-});
-  </script>
- 
-  <script src="https://unpkg.com/ionicons@4.4.8/dist/ionicons.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+    <script src="https://unpkg.com/ionicons@4.4.8/dist/ionicons.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
 
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137967572-1"></script>
-  
-    
-          
-  </body>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137967572-1"></script>
+
+
+
+</body>
+
 </html>
