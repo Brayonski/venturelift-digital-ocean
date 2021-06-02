@@ -67,6 +67,6 @@ social-auth-core==3.1.0
 towel==0.11.0
 typing==3.7.4.1
 Unidecode==1.0.23
-urllib3==1.24.1
+urllib3==1.26.5
 vine==1.2.0
 webencodings==0.5.1
